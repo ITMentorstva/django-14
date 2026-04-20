@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import ProfileView
+from core.views import DispatchView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('profile/', ProfileView.as_view())
+    path('profile/', ProfileView.as_view(), name='profile'),
+    path('dispatch/', DispatchView.as_view(), name='dispatch')
 ]

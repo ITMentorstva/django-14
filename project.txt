@@ -29,18 +29,88 @@
     -> Koliko je kilometara presao
     -> Kada je vratio vozilo
 
+-> Country
+    -> Name
+
+-> City
+    -> Name
+    -> Country
+
+-> Company
+    -> name
+    -> City
+    -> created_at
+
+
 -> Shipments
+    -> title "Jabuke za ABC DOO"
+    -> description "Treba dostaviti jabuke od A to B"
+    -> company
+    -> pickup_location
+        -> City, odakle se uzima?
+    -> delivery_location
+        -> City, dokle ide?
+
+    -> price
+        -> Koja je cena posiljke?
+
+    -> status
+        -> pending/canceled/enroute/delivered
+        -> default: pending
+
+    -> created_at
+        -> Kada je napravljena
+    -> scheduled_at
+        -> Kada je pickup?
+    -> deadline
+        -> do kada treba dostaviti?
+
+    -> dispatcher
+        -> Koji dispatcher je dodeljene?
+            -> Povezano sa user
+
+    -> driver
+        -> koji driver je dodeljen?
+            -> Povezano sa user
+
+    -> vehicle
+        -> koje vozile se koristi ?
+            : Mozda se vozac razboli ili nesto, a vozilo ostane isto
+
+    estimated_distance
+        -> koliko u KM je rastojanje?
+            -> Koristicemo Google API da proverimo ovo
+
+    notes
+        -> Mozda neki note? "Klijent ne voli ako se vozi brzo"
+
+
+Invoices
+    -> shipment
+        -> Za koji shipment
+
+    -> price
+        -> koliko novca
+
+    -> due_date
+        -> do kada mora da se plati
+
+    -> created_at
+        -> kada je kreiran racun
+
+    -> status
+        -> paid/unpaid/cancled/refunded
+
+    -> pdf
+        -> Putanja do pdf-a racuna
+
+
 -> Expenses
 
 
-#####################
 DOMACI:
-    -> Koristiti ModelForme u Djangu
-        -> Napraviti formu za unos mileage (vehiclelog-a) na /profile
+    -> Ako imamo shipment koji je enroute i vec koristi tog drivera ILI vehicle dispatcher ne moze assignovati negde drugde
+    -> Zastiti /admin
+        -> Bude dostupan SAMO iskljucivo osobama koje imaju role "admin"
 
-    -> Korisnik moze SAMO jednom dnevno da unese podatke
-        -> forma se ne prikazuje ako smo vec uneli za danas
-
-    -> Korisnik ne moze da menja vozilo i ne moze da menja datum
-        -> Polja vozilo i datum se NE prikazuju
 

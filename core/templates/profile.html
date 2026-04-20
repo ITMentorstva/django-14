@@ -1,5 +1,13 @@
 <h1>Test profile 123</h1>
 
+{% if form %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endif %}
+
 {% for log in user.vehiclelog_set.all %}
     <p>{{ log.return_time }}: {{ log.vehicle.plate_number }} - {{ log.mileage }}km (&euro;{{ log.earning }}) </p>
 {% endfor %}
