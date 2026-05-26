@@ -2,6 +2,7 @@
 
 from django.db import models
 from .city import City
+from simple_history.models import HistoricalRecords
 
 class Company(models.Model):
 
@@ -14,6 +15,8 @@ class Company(models.Model):
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.name

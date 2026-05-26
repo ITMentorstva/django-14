@@ -1,6 +1,7 @@
 
 from django.db import models
 from django.conf import settings
+from simple_history.models import HistoricalRecords
 
 class Shipment(models.Model):
 
@@ -67,6 +68,8 @@ class Shipment(models.Model):
     estimated_distance = models.IntegerField(null=True, blank=True)
 
     notes = models.TextField(null=True, blank=True)
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.title

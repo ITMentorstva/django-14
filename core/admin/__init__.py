@@ -1,4 +1,5 @@
 
+from .admin_site import admin_site
 from .user import *
 from .vehicle import *
 from .vehicle_log import *
@@ -7,9 +8,9 @@ from .city import *
 from .company import *
 from .shipment import *
 
-admin.site.register(Vehicle)
-admin.site.register(VehicleLog)
-admin.site.register(Country)
-admin.site.register(City)
-admin.site.register(Company)
-admin.site.register(Shipment)
+admin_site.register(Vehicle)
+admin_site.register(VehicleLog)
+admin_site.register(Country)
+admin_site.register(City)
+admin_site.register(Company)
+admin_site.register(Shipment)

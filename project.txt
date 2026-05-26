@@ -109,7 +109,9 @@ Invoices
 
 
 DOMACI:
-    -> Ako imamo shipment koji je enroute i vec koristi tog drivera ILI vehicle dispatcher ne moze assignovati negde drugde
+    -> Ako imamo shipment koji je enroute i vec koristi tog drivera ILI
+        vehicle dispatcher ne moze assignovati negde drugde
+
     -> Zastiti /admin
         -> Bude dostupan SAMO iskljucivo osobama koje imaju role "admin"
 
